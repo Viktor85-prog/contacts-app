@@ -1,6 +1,9 @@
 import React from "react";
 import styles from "./Contacts.module.css";
 import { useState, useEffect } from "react";
+import Paper from "@material-ui/core/Paper";
+import Grid from "@material-ui/core/Grid";
+import Container from "@material-ui/core/Container";
 
 const useContacts = () => {
   const [data, setData] = useState([]);
@@ -44,10 +47,16 @@ let Contacts = () => {
   }
 
   return (
-    <div>
-      Contacts
-      {contacts.data[0].name.first}
-    </div>
+    <Container>
+      <Grid container spacing={3}>
+        <Grid item xs={12}>
+          <Paper>
+            Contacts
+            {contacts.data[0].name.first}
+          </Paper>
+        </Grid>
+      </Grid>
+    </Container>
   );
 };
 
