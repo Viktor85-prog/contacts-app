@@ -1,0 +1,12 @@
+.userPhoto {
+  height: 100px;
+}
+
+.selectedPage {
+  font-weight: bold;
+}
+
+.page {
+  cursor: pointer;
+  display: inline;
+}
