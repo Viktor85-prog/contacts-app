@@ -1,7 +1,9 @@
 .header {
   grid-area: h;
-  background-color: blue;
+  background-color: rgb(114, 32, 134);
   border: 5px solid white;
+  color: whitesmoke;
+  padding: 10px;
 }
 
 .loginBlock {

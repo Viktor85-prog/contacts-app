@@ -2,6 +2,7 @@
   width: 1200px;
   margin: 0 auto;
   display: grid;
+  color: grey;
   grid-template-rows: 60px 1fr;
   grid-template-columns: 1fr 10fr;
   height: 100vh;
@@ -13,7 +14,7 @@
 
 .app-wrapper-content {
   grid-area: c;
-  background-color: #abc;
+  background-color: rgb(199, 243, 206);
   border: 5px solid white;
   padding: 10px;
 }
@@ -24,7 +25,7 @@ a {
 }
 a.selected {
   font-weight: bold;
-  color: black;
+  color: rgb(37, 37, 37);
 }
 
 .head {

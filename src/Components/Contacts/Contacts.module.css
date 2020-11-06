@@ -1,4 +1,4 @@
-.userPhoto {
+/* .userPhoto {
   height: 100px;
 }
 
@@ -9,4 +9,15 @@
 .page {
   cursor: pointer;
   display: inline;
+} */
+
+/* .root {
+  margin-top: 20px;
+} */
+
+.container {
+  width: 150px;
+  margin-top: 5px;
+  padding: 5px;
+  text-align: center;
 }

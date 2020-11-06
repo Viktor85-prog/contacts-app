@@ -1,7 +1,8 @@
 .nav {
   grid-area: n;
-  background-color: green;
+  background-color: rgb(199, 139, 238);
   border: 5px solid white;
+  /* color: grey; */
 }
 
 li {
