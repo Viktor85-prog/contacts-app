@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+// import { makeStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -7,12 +7,11 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import Avatar from "@material-ui/core/Avatar";
+import { CopyToClipboardText } from "../../CopyToClipboardText/CopyToClipboardText";
 
 const ContactsTable = (props) => {
-  //   debugger;
-  //   console.log(props.data[0]);
   return (
-    // <div>rg</div>
     <TableContainer component={Paper}>
       <Table
         //   className={classes.table}
@@ -26,21 +25,35 @@ const ContactsTable = (props) => {
             <TableCell>Email</TableCell>
             <TableCell>Phone</TableCell>
             <TableCell>Location</TableCell>
-            <TableCell>Nationality</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {props.data.map((contact) => (
-            <TableRow key={contact.id.value}>
+            <TableRow key={contact.login.uuid}>
               <TableCell component="th" scope="row">
-                1
+                <Avatar
+                  alt={contact.name.first}
+                  src={contact.picture.thumbnail}
+                />
               </TableCell>
-              <TableCell>2</TableCell>
-              <TableCell>3</TableCell>
-              <TableCell>4</TableCell>
-              <TableCell>5</TableCell>
-              <TableCell>6</TableCell>
-              <TableCell>7</TableCell>
+              <TableCell>
+                {contact.name.title}. {contact.name.first} {contact.name.last}
+              </TableCell>
+              <TableCell>
+                {contact.dob.date} <br />
+                {contact.dob.age} years
+              </TableCell>
+              <TableCell>
+                <CopyToClipboardText text={contact.email} />
+              </TableCell>
+              <TableCell>
+                <CopyToClipboardText text={contact.phone} />
+              </TableCell>
+              <TableCell>
+                /{contact.location.country}/ <br />{" "}
+                {contact.location.street.number}, {contact.location.street.name}
+                , {contact.location.city}
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>

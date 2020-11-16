@@ -24,16 +24,6 @@ let Contacts = () => {
         </Grid>
         <Grid item xs={12}>
           <Paper>
-            {/* {(() => {
-              if (contacts.isLoading) {
-                return <div> ... loading</div>;
-              }
-
-              if (contacts.isError) {
-                return <div> ...error</div>;
-              }
-              <ContactsTable data={contacts.data} />;
-            })()} */}
             <ContactsTableContainer data={contacts} />
           </Paper>
         </Grid>
