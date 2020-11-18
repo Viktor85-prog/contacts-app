@@ -1,9 +1,10 @@
 import React from "react";
 import ContactsTable from "./ContactsTable";
+import Preloader from "../../common/Preloader/Preloader";
 
 const ContactsTableContainer = (props) => {
   if (props.data.isLoading) {
-    return <div> ... loading</div>;
+    return <Preloader className="preloader" />;
   }
   if (props.data.isError) {
     return <div> ...error</div>;

@@ -9,6 +9,7 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import Avatar from "@material-ui/core/Avatar";
 import { CopyToClipboardText } from "../../CopyToClipboardText/CopyToClipboardText";
+import { NATIONALITIES_HUMAN_NAME } from "../../../constants/nationality";
 
 const ContactsTable = (props) => {
   return (
@@ -25,6 +26,7 @@ const ContactsTable = (props) => {
             <TableCell>Email</TableCell>
             <TableCell>Phone</TableCell>
             <TableCell>Location</TableCell>
+            <TableCell>Nationality</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -50,10 +52,11 @@ const ContactsTable = (props) => {
                 <CopyToClipboardText text={contact.phone} />
               </TableCell>
               <TableCell>
-                /{contact.location.country}/ <br />{" "}
+                /{contact.location.country}/ <br />
                 {contact.location.street.number}, {contact.location.street.name}
                 , {contact.location.city}
               </TableCell>
+              <TableCell>{NATIONALITIES_HUMAN_NAME[contact.nat]}</TableCell>
             </TableRow>
           ))}
         </TableBody>
